@@ -3,6 +3,9 @@ import numpy as np
 from rdkit import Chem, RDConfig, rdBase
 from rdkit.Chem import AllChem, ChemicalFeatures
 
+# This builds a chemical feature factory (built into rdkit)
+# This does things like GetFamily (Donor, Acceptor, Family. PosIonizable, Hydrophobe etc...)
+# GetType (SingleAtomAcceptor, SingleAtomDonor, Basic Group, Arom6, etc.)
 chem_feature_factory = ChemicalFeatures.BuildFeatureFactory(os.path.join(RDConfig.RDDataDir, 'BaseFeatures.fdef'))
 
 def mol_dict():
